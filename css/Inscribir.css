@@ -1,0 +1,43 @@
+.Inscribir{
+	margin: 20px 5px 10px 5px;
+	width: 350px;
+}
+.InputsRegistro{
+	margin: 0px 0px 12px 10px; 
+	width:auto;
+	border-radius: 7px;
+	float: right;
+}
+.CajaInscripciones{
+	float:left;
+	margin: 3% 4%;
+	width: 600px;
+}
+.CajaInscripciones span{
+	padding-left:5px;
+	font-family: san-serif;
+	font-style: italic;
+	float:right; 
+
+}
+.Boton{
+	border-radius: 15px 15px 15px 15px;
+	float: right;
+}
+.CajaInscripciones h2{
+	margin: -25px 0px 30px 60px;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	font-size: 1.5em;
+	float:none;
+}
+.Registro{
+	color: #FF0000;
+}
+.Posiciones{
+	margin-left: 120px; 
+}
+.pintar{
+	background: url(images/img06.png) repeat; 
+	margin: 3px 10px 0px 40px;
+	text-align: left;
+}

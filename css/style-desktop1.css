@@ -1,0 +1,28 @@
+
+
+
+#menu2 {
+	height: 60px;
+}
+
+#menu2 ul {
+	text-align: right;
+}
+
+#menu2 li {
+	display: inline-block;
+	padding: 0px 20px;
+	line-height: 60px;
+}
+
+#menu2 a {
+	display: block;
+	float: left;
+	margin-right: 2px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Abel', sans-serif;
+	font-size: 13pt;
+	color: #FFFFFF;
+}
+
