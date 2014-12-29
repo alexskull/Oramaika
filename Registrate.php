@@ -30,6 +30,7 @@
 		<header id="header">
 			<div class="5grid-layout">
 				<div class="row">
+          
 					<div class="12u" id="logo"> <!-- Logo -->
 						<h1>&nbsp;</h1>
 						<p>&nbsp;</p>
