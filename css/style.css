@@ -17,19 +17,7 @@ h1, h2, h3 {
 	font-family: 'Oswald', sans-serif;
 	font-weight: 300;
 }
-.Menu{
 
-	float:left;
-	
-}
-.Menu a{
-
-	padding-left: 20px;
-}
-.Ocultar{
-
-	display: none;
-}
 
 xxp{
 	font-size: 25px;
@@ -65,6 +53,19 @@ strong {
 	background: url(images/img06.png) repeat; 
 	margin: 3px 10px 0px 40px;
 	text-align: left;
+}
+.Menu{
+
+	float:left;
+	
+}
+.Menu a{
+
+	padding-left: 20px;
+}
+.Ocultar{
+
+	display: none;
 }
 input.input-field, textarea.input-field, select.input-field {
 float:left;
