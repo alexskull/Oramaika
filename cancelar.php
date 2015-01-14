@@ -14,7 +14,9 @@
        $my_error = mysql_error($link); 
        if ($my_error) 
        {
+
           echo "<script type='text/javascript'>alert('AVISO: No se puede eliminar reservación problemas de conexión');</script>";
+       
        }
 
        $consul_resses="DELETE FROM pasa WHERE fk_reserva ='".$locaN."'";
