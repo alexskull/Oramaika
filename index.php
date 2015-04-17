@@ -93,21 +93,16 @@
     
 	<div id="page-wrapper" class="5grid-layout">
 		<div class="5grid-layout">
-			<div class="row">
+			
 				<div class="12u">
 					<div id="_SESSION['ban']ner">		
                             <div class="slider">
                                 <ul class="items">
                                     <li><img src="images/s01.jpg" alt="" /></li>
-                                    <li><img src="images/s02.jpg" alt="" /></li>
-                                    <li><img src="images/s03.jpg" alt="" /></li>
-                                    <li><img src="images/s04.jpg" alt="" /></li>
-                                    <li><img src="images/s05.jpg" alt="" /></li>
-                                    <li><img src="images/s06.jpg" alt="" /></li>
                                 </ul>
                                 <a href="#" class="prev"></a><a href="#" class="next"></a>
                             </div>	
-                            
+                       
                         </div>
                        
                         <div class="12u">
@@ -241,8 +236,7 @@ Ius id vidit volumus mandamus, vide veritus democritum te nec, ei eos debet libr
 	            
 	            
 	        	
-	        	$_SESSION['ban']=true;
-	        	echo '<script language="javascript">alert("Bienvenido al sistema");</script>'; 
+	        	$_SESSION['ban']=true; 
 	        	
 	        }
 	        if($_SESSION['ban']==false)
