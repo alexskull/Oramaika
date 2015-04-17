@@ -4,15 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		
-		<link href="css/Inscribir.css" rel="stylesheet" type="text/css"/>
-
-
+    <link rel="stylesheet" href="css/5grid/core.css" />
+    <link rel="stylesheet" href="css/5grid/core-desktop.css" />
+    <link rel="stylesheet" href="css/5grid/core-1200px.css" />
+    <link rel="stylesheet" href="css/5grid/core-noscript.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-desktop.css" />
+    <link rel="stylesheet" href="css/least.min.css" />
 		<title>Modificar Reserva</title>
 	</head>
 	<body>
-			<div class="CajaInscripciones">
-
+			<div id="copyright">
 			<?php
 
 			if(isset($_GET["Nlocalizador"])){
@@ -56,14 +58,14 @@
 		
 			
 										
-					<h2 align="right"> 
-						<?php echo $row['nom_desti'];?><br><?php echo $row['precio_desti']." Bs";?>
-					</h2>
+					<h2 align="center"><?php echo $row['nom_desti'];?><br><?php echo $row['precio_desti']." Bs";?>
+						
+					
 					
 						
              	  			<form method="POST" name="registrodeusa" >
              	      			
-                            <details style="display:none"; > 
+                            <details style="display:none"; ><br> 
                             	<select name="variable"> 
                             		<option value=<?php echo $row['id_desti'];  ?>> <?php echo $row['id_desti'];  ?></option>
                             	</select>
@@ -78,9 +80,9 @@
                                             $resulS_consul_promo=mysql_query($consul_Promo,$link);
                                             while($fila=mysql_fetch_array($resulS_consul_promo))
                                             { 
-                                        ?>
+                                        ?><span class="Registro">Promoción: </span> 
                                       			<span ><?php echo $fila['nom_promo']; ?></span>
-                                      			<span class="Registro">Promoción: </span>                                              
+                                      			                                             
                                         <?php
                                                 if ($fila['id_promo']>'1' ) 
                                                 {
@@ -97,7 +99,7 @@
                                             	$resulS_consul_lanc=mysql_query($consul_lanc,$link);
                                         ?> 
                                         <br><P>
-                                            	<select name="lanc" class="InputsRegistro" required>
+                                            	<select name="lanc" class="laM" required>
                                                 <option value="0"> Elija Lanche hora de salida y hora de llegada</option>
                                         <?php
                                             	while($flanc=mysql_fetch_array($resulS_consul_lanc))
@@ -111,7 +113,7 @@
                                             			{
                                             				if($row['id_viaje']==$fviaje['id_viaje']){
                                          ?>
-		                                            			<option class="InputsRegistro" value=<?php echo $fviaje['id_viaje'];?> selected>
+		                                            			<option class="laR" value=<?php echo $fviaje['id_viaje'];?> selected>
 		                                            				Lancha: <?php echo $flanc['nom_lanc'];?>
 		                                            				(Hora Salida: <?php echo $fviaje['hora_salida'];?>
 		                                            				Hora Retorno: <?php echo $fviaje['hora_retorno'];?>)
@@ -120,7 +122,7 @@
                                         					}
                                         					else{
                                         						?>
-                                        						<option class="InputsRegistro" value=<?php echo $fviaje['id_viaje'];?> selected>
+                                        						<option class="laR" value=<?php echo $fviaje['id_viaje'];?> selected>
 	                                            				Lancha: <?php echo $flanc['nom_lanc'];?>
 	                                            				(Hora Salida: <?php echo $fviaje['hora_salida'];?>
 	                                            				Hora Retorno: <?php echo $fviaje['hora_retorno'];?>)
@@ -136,6 +138,7 @@
                                             </select> 
                                             <br>
                                             </P>
+                                            <br>
                                             <P>
                                             	<span>Fecha de Viaje</span>  <br>
                                               <?php 
@@ -143,12 +146,12 @@
                                               $nuevafecha = strtotime ( '6 day' , strtotime ( $fechaini ) ) ;
                                               $nuevafecha = date ( 'Y-m-j' , $nuevafecha );
                                                          ?>
-                                            	<input  name="fecha_viaje" min=<?php echo $nuevafecha; ?> id="fecha_viaje"  type="Date"  class="InputsRegistro" required value="<?php echo $row['fecha_viaje'];?>" >
+                                            	<input  name="fecha_viaje" min=<?php echo $nuevafecha; ?> id="fecha_viaje"  type="Date"  class="laR" required value="<?php echo $row['fecha_viaje'];?>" >
                                             </P>
                                             <br>
                                              
                                              <p><span class="">Cantidad de adultos: </span> <br>
-		                                        <select name="Nadualtos" class="InputsRegistro" required>
+		                                        <select name="Nadualtos" class="laR" required>
 												<?php
 			                                            for ($i=1; $i <16 ; $i++) 
 			                                            { 
@@ -171,7 +174,7 @@
                                             <br>
 
                                             <p><span class="">Cantidad de niños o adultos mayores a 60: </span><br>
-		                                        <select name="Nninos" class="InputsRegistro" required>
+		                                        <select name="Nninos" class="laR" required>
 												<?php
 			                                            for ($i=0; $i <5 ; $i++) 
 			                                            { 
@@ -191,7 +194,7 @@
                                         	</p>
                                         	
                                             <br>
-                                            <P><input  name="res" id="res" value="Modificar" type="submit"  class="Boton"  ></P>  
+                                            <P><input  name="res" id="res" value="Modificar" type="submit"  class="input-botonC"  ></P>  
                                         <?php  
 			                   				} 
                                         ?>

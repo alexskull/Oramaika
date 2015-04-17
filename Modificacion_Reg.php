@@ -46,7 +46,8 @@
 						<div id="menu-wrapper">
 							<nav class="mobileUI-site-nav">
 								<ul>
-									<li><a href="index_usa.php">Inicio</a></li>
+									<li><a href="#">USUARIO: <?php echo $_SESSION['Nombre_usa']; echo " "; echo $_SESSION['apellido_usa']; ?></a></li>
+                  <li></li><li></li><li></li><li></li><li ><a href="index_usa.php">Inicio</a></li>
                   <li ><a href="Promocion.php">Promociones</a></li>
                   <li><a href="Reservacion.php">Reservación</a></li>
                   <li class="current_page_item"><a href="Modificacion_Reg.php">Perfil de Usuario</a></li>
@@ -75,7 +76,7 @@
 				<div id="content">
 					<section>
 						<div class="post" align="left">
-							<h2 align="right"> Perfil: <?php echo $_SESSION['Nombre_usa']; echo " "; echo $_SESSION['apellido_usa']; ?></h2>
+							<br><br><br><br><br><br><br>
 						  	<section>
              	  <form method="POST" name="registrodeusa" >
              	      <h12>
