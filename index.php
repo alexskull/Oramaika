@@ -233,6 +233,7 @@ Ius id vidit volumus mandamus, vide veritus democritum te nec, ei eos debet libr
 	            $_SESSION["email"]= $row["email_usa"];
 	            $_SESSION["direccion"]= $row["direc_usa"]; 
 	            $_SESSION["pass"]= $row["pass_usa"];
+	            $_SESSION["tipo"]= $row["desp_usa"];
 	            
 	            
 	        	
@@ -244,12 +245,20 @@ Ius id vidit volumus mandamus, vide veritus democritum te nec, ei eos debet libr
 	        	echo "<script type='text/javascript'>alert('AVISO: Usuario y Contraseña Invalida');</script>";
 	        }   
             mysql_close($link);   
-            if ($_SESSION['ban']==true) 
-            {
+            if ($_SESSION["ban"]==true){
+            	if($_SESSION["tipo"]=='2') 
+            	{
                  ?><script type="text/javascript">
 					window.location="index_usa.php";
 					</script><?php 
-            }     
+            	}if($_SESSION["tipo"]=='1')  {
+            	?>
+            		<script type="text/javascript">
+					window.location="index_adm.php";
+					</script>
+            	<?php
+            	}  
+            }   
         }
    
     ?>

@@ -69,7 +69,7 @@ mysql_close($link);
 							<nav class="mobileUI-site-nav">
 								<ul>
 									<li ><a href="#">USUARIO: <?php echo $_SESSION['Nombre_usa']; echo " "; echo $_SESSION['apellido_usa']; ?></a></li>
-                  <li></li><li></li><li></li><li></li><li class="current_page_item"><a href="index_usa.php">Inicio</a></li>
+                  <li class="current_page_item"><a href="index_usa.php">Inicio</a></li>
                   <li ><a href="Promocion.php">Promociones</a></li>
                   <li><a href="Reservacion.php">Reservación</a></li>
                   <li ><a href="Modificacion_Reg.php">Perfil de Usuario</a></li>
@@ -162,7 +162,7 @@ mysql_close($link);
                       </p>
                       <p>
                         <span class="Estilo1 Estilo2">Número de deposito (*)</span>
-                        <input name="Ndeposito" type="number" class="laR"   min="5" max="15 "required title="INGRESANDO EL NÚMERO DE DEPOSITO"  >
+                        <input name="Ndeposito" type="number" class="laR"  required title="INGRESANDO EL NÚMERO DE DEPOSITO"  >
                       </p>
                       <p>
                         <span class="Estilo1 Estilo2">Fecha de deposito (*)</span>

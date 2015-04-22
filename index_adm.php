@@ -1,4 +1,6 @@
- <?php  session_start();?>
+ <?php  session_start();
+        header('location:Promocion_adm.php');
+ ?>
  <?php
     require_once('funciones/conectar.php');
 ?>
@@ -50,7 +52,6 @@
 							<nav class="mobileUI-site-nav">
 								<ul>
                   <li><a href="#" align="right"> <h2 align="right">USUARIO: <?php echo $_SESSION['Nombre_usa']; echo " "; echo $_SESSION['apellido_usa']; ?></h2></a></li>
-                    <li class="current_page_item"><a href="index_adm.php">Inicio</a></li>
                     <li ><a href="Promocion_adm.php">Adm. promociones</a></li>
                   	<li ><a href="Reservacion.php">Adm. Reservaciones </a></li>
                   	<li ><a href="Modificacion_Reg.php">Adm.Usuarios</a></li>
@@ -77,67 +78,4 @@
 	</section>
 </div>
 </body>
-<?php 
-if (isset($_POST['res']))
-{
-      $_SESSION['ban']=false;
-    	$viajeid= $_POST["lanc"]; 
-      $destino= $_POST['variable'];
-      $f_viaje= $_POST["fecha_viaje"];
-      $fr=Date("Y-m-j");
-      $cadultos= $_POST["Nadualtos"]; 
-      $cninos= $_POST["Nninos"];
-      $cedulausa=$_SESSION['cedula'];
-      $estatus='Iniciado';
-      $cad=generar_clave(10); 
-     if($viajeid=='0')
-     {
-        echo "<script type='text/javascript'>alert('AVISO: Debe seleccionar un viaje y hora de salida y retorno');</script>";
-     }
-     else
-     {
-
-        $link = mysql_connect('localhost', 'root')
-        or die('No se pudo conectar: ' . mysql_error());
-        mysql_select_db('oramaika') or die('No se pudo seleccionar la base de datos');
-        mysql_query("INSERT INTO reserva 
-          (fk_viaje_res,
-           fk_usua_res,
-           fk_desti_res,
-           fecha_viaje,
-           fecha_operacion,
-           cant_ninos,
-           cant_adultos,
-           estatus,
-           Nlocalizador)
-                     VALUES 
-                     ('".$viajeid."',
-                      '".$cedulausa."',
-                      '".$destino."',
-                      '".$f_viaje."',
-                      '".$fr."',
-                      '".$cninos."',
-                      '".$cadultos."',
-                      '".$estatus."',
-                      '".$cad."')",$link);  
-        $my_error = mysql_error($link); 
-        mysql_close($link);
-
-        if ($my_error) 
-        {
-            echo "<script type='text/javascript'>alert('AVISO: Existen problemas con la reservacion intente nuevamente');</script>";
-        }
-        else
-        {
-          $_SESSION['ban']=true;
-          $_SESSION['CA']=$cadultos;
-          $_SESSION['CN']=$cninos;
-          $_SESSION['id_loc']=$cad;
-          ?><script type="text/javascript">
-          window.location="Pasajeros.php";
-          </script><?php 
-        }
-     }
-   }
-?>
 </html>

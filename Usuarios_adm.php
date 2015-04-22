@@ -1,4 +1,4 @@
- <?php  session_start();?>
+<?php  session_start();?>
  <?php
     require_once('funciones/conectar.php');
 ?>
@@ -51,9 +51,9 @@
 							<nav class="mobileUI-site-nav">
 								<ul>
                     <li><a href="#" align="right"> <h2 align="right">USUARIO: <?php echo $_SESSION['Nombre_usa']; echo " "; echo $_SESSION['apellido_usa']; ?></h2></a></li>
-                    <li class="current_page_item"><a href="Promocion_adm.php">Adm. promociones</a></li>
+                    <li ><a href="Promocion_adm.php">Adm. promociones</a></li>
                     <li ><a href="Reservacion_adm.php">Adm. Reservaciones </a></li>
-                    <li ><a href="Usuarios_adm.php">Adm.Usuarios</a></li>
+                    <li class="current_page_item"><a href="Usuarios_adm.php">Adm.Usuarios</a></li>
                     <li ><a href="#">Adm.Destinos</a></li>
                     <li><a href="Dex.php">Desconectar</a></li>
 								</ul>
@@ -66,32 +66,19 @@
 	</div>
 	<div id="page-wrapper" class="5grid-layout">
 
-         <?php 
-        $link = mysql_connect('localhost', 'root')
-        or die('No se pudo conectar: ' . mysql_error());
-        mysql_select_db('oramaika') or die('No se pudo seleccionar la base de datos');
-        $consul_Promo="SELECT * from promo";
-        $resulS_consul_promo=mysql_query($consul_Promo,$link);
-        $my_error = mysql_error($link); 
-        if ($my_error) 
-        {
-            echo "<script type='text/javascript'>alert('AVISO: Existen problemas con la conexión');</script>";
-        }
-         mysql_close($link);
-    ?>
+      
     <br>
     <div class="3u" id="sidebar1">
           <section>
-            <h2>Adm. Promoción</h2>
+            <h2>Adm. Usuarios</h2>
             <ul class="style1">
-              <li><a href="Promocion_adm_crear.php"  target="ventana_iframe">Crear Promoción</a></li>
-              <li><a href="Promocion_adm_consultar.php" target="ventana_iframe">Consultar Promoción</a></li>
+              <li><a href="Usuario_adm_consultar.php" target="ventana_iframe">Consultar Usuario</a></li>
               
             </ul>
           </section>
           
         </div><br>
-      <iframe  name="ventana_iframe" src="Promocion_adm_crear.php" width=870 height=950></iframe>
+      <iframe  name="ventana_iframe" src="Usuario_adm_consultar.php" width=870 height=950></iframe>
      
     
 	</div>
@@ -104,10 +91,3 @@
 </div>
 </body>
 </html>
-
-                  
-                   
-                     
-                    
-                
-            

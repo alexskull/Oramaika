@@ -114,16 +114,14 @@ if (isset($_POST['res']))
                    fec_fin_promo,
                    desp_promo,
                    PorcentajeDes,
-                   estado_promo,
-                   imagen)
+                   estado_promo)
                              VALUES 
                              ('".$nomp."',
                               '".$fini."',
                               '".$ffin."',
                               '".$desp."',
                               '".$ran."',
-                              '".$esta."',
-                              '".$ruta."')",$link);  
+                              '".$esta."')",$link);  
         $my_error = mysql_error($link); 
         mysql_close($link);
         if ($my_error) 

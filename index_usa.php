@@ -93,7 +93,7 @@
 							<nav class="mobileUI-site-nav">
 								<ul>
                 <li ><a href="#">USUARIO: <?php echo $_SESSION['Nombre_usa']; echo " "; echo $_SESSION['apellido_usa']; ?></a></li>
-                  <li ></li><li></li><li></li><li></li><li class="current_page_item"><a href="index_usa.php">Inicio</a></li>
+                  <li class="current_page_item"><a href="index_usa.php">Inicio</a></li>
                   <li ><a href="Promocion.php">Promociones</a></li>
                   <li><a href="Reservacion.php">Reservación</a></li>
                   <li ><a href="Modificacion_Reg.php">Perfil de Usuario</a></li>
@@ -202,7 +202,7 @@
                                   $resulS_estatus=mysql_query($estatus,$link);
                                   if (mysql_num_rows($resulS_estatus)==1) 
                                   {
-                                      ?><li class="Modificadores"><a>Cancelar</a></li><?php
+                                      ?><li class="Modificadores"><a>--------------</a></li><?php
                                       
                                   }
                                   else

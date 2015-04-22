@@ -1,4 +1,6 @@
- <?php  session_start();?>
+ <?php  session_start();
+        error_reporting(0);
+ ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -84,8 +86,12 @@
                     ?><p align="right">Preferencial Niños y Adultos mayores de 60 años</p> <?php
                    
                   } ?>
-                     
-                  <?php while ( $row=mysql_fetch_assoc($query) ) 
+
+                  <?php
+                    $query=mysql_query("SELECT * FROM `pasa` WHERE fk_reserva='$fkres';");
+                  ?>
+
+                  <?php while ($row=mysql_fetch_assoc($query)) 
                   { 
                   	if($row['tipo_pasa']=='Preferencial'){
                   
@@ -108,7 +114,7 @@
 
 					?>
                     <p>
-                      <span class="Estilo1 Estilo2">Pasajero <?php echo $i; ?></span><br>
+                      <span class="Estilo1 Estilo2">Pasajero <?php echo $cant_ni_antes; ?></span><br>
                       <input name="CedulaN<?php echo $_SESSION['N']; ?>" type="number" class="InputsRegistro"  maxlength="9"  title="INGRESANDO LA CEDULA SIN CARACTERES ESPECIALES"  placeholder="Cedula" >
                       <input name="NombreN<?php echo $_SESSION['N']; ?>" type="text" class="InputsRegistro"  maxlength="25" required title="INGRESANDO EL NOMBRE"  placeholder="Nombre">
                       <input name="ApellidoN<?php echo $_SESSION['N']; ?>" type="text" class="InputsRegistro"  maxlength="25" required title="INGRESANDO LOS APELLIDOS"  placeholder="Apellidos">
@@ -235,7 +241,7 @@ if (isset($_POST['pas']))
                $bann1=true;
           }
       }
-  		if ($bann0==true and $bann1==true) 
+  		if ($bann0==true && $bann1==true) 
       {
           mysql_close($link); 
           $_SESSION['ban']=false;
@@ -248,9 +254,9 @@ if (isset($_POST['pas']))
           $_SESSION['N']=0;
 
           echo "<script type='text/javascript'>alert('AVISO: Los pasajeros han sido agregados existosamente');</script>";   
-          ?><script type="text/javascript">
-          window.location="PDF.php";
-          </script><?php 
+          ?><SCRIPT LANGUAGE=javascript>
+             window.history.go(-2);
+            </SCRIPT> <?php 
       }     
       mysql_close($link);	 
 }

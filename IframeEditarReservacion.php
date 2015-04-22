@@ -256,11 +256,13 @@ if (isset($_POST['res']))
           $_SESSION['CA']=$cadultos;
           $_SESSION['CN']=$cninos;
           $_SESSION['id_loc']=$cad;
-          ?>
-          <script type="text/javascript">
-          window.location="IframePasajeros.php";
-          </script>
+          if($_SESSION['cant_ninos_antes']!=$cninos || $_SESSION['cant_adultos_antes']!=$cadultos){
+           ?>
+            <script type="text/javascript">
+              window.location="IframePasajeros.php";
+            </script>
           <?php 
+          }
         }
      }
    }

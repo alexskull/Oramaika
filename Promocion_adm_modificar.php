@@ -145,15 +145,15 @@ if (isset($_POST['res']))
         $link = mysql_connect('localhost', 'root')
         or die('No se pudo conectar: '.mysql_error());
         mysql_select_db('oramaika') or die('No se pudo seleccionar la base de datos');
-        mysql_query("UPDATE promo SET
-                  nom_promo='$nomp',
-                   fec_ini_promo='$fini',
-                   fec_fin_promo='$ffin',
-                   desp_promo='$desp',
-                   PorcentajeDes='$ran',
-                   estado_promo='$esta',
-                   imagen='$ruta'
-                    WHERE id_promo='".$valor."'",$link);   
+        mysql_query("UPDATE `promo` SET
+                  `nom_promo`='".$nomp."',
+                   `fec_ini_promo`='".$fini."',
+                   `fec_fin_promo`='".$ffin."',
+                   `desp_promo`='".$desp."',
+                   `PorcentajeDes`='".$ran."',
+                   `estado_promo`='".$esta."'
+                    WHERE `id_promo`='$valor'",$link);  
+                    echo (mysql_affected_rows()) ? "Edited row.<br />" : "Nothing changed. <br />";  
         $my_error = mysql_error($link);
          mysql_close($link);
           if ($my_error) 

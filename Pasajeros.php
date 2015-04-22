@@ -195,7 +195,7 @@ if (isset($_POST['pas']))
           $_SESSION['id_loc']='0';
           echo "<script type='text/javascript'>alert('AVISO: Los pasajeros han sido agregados existosamente');</script>";   
           ?><script type="text/javascript">
-          window.location="PDF.php";
+          window.location="index_usa.php";
           </script><?php 
       }     
       mysql_close($link);	 

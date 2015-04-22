@@ -50,7 +50,7 @@
 							<nav class="mobileUI-site-nav">
 								<ul>
 								  	<li><a href="#">USUARIO: <?php echo $_SESSION['Nombre_usa']; echo " "; echo $_SESSION['apellido_usa']; ?></a></li>
-                  <li></li><li></li><li></li><li></li><li ><a href="index_usa.php">Inicio</a></li>
+                  <li ><a href="index_usa.php">Inicio</a></li>
                   <li ><a href="Promocion.php">Promociones</a></li>
                   <li class="current_page_item"><a href="Reservacion.php">Reservación</a></li>
                   <li ><a href="Modificacion_Reg.php">Perfil de Usuario</a></li>
